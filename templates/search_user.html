@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search User</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search for a User</h1>
+        
+        <!-- Error Message Display -->
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <!-- Search Form -->
+        <form action="/search_user_result/" method="post" class="form">
+            <label for="search_name">Enter Name:</label>
+            <input type="text" id="search_name" name="search_name" required>
+
+            <!-- CAPTCHA -->
+            <label for="captcha">Enter CAPTCHA:</label>
+            <img src="/captcha" alt="CAPTCHA Image" style="display:block; margin-bottom:10px;">
+            <input type="text" id="captcha" name="captcha" required>
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
